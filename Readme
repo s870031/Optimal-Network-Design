@@ -1,0 +1,35 @@
+Optimal Network Design Application
+-----------------------------------
+
+Author: Hsin-Hua Chen
+
+Description:  This program use Floyd-Warshall's All-Pair Shortest Path 
+Algorithm to design a network topology with given number of nodes (N), 
+demand of  traffic (bij) and the cost of each link (aij). It outputs the 
+topology ,capacity of each links, link density, estimated cost  which 
+all satisfies overall optimal link cost.
+
+Platform/compiler: MacOS, g++
+
+Files:
+generator.cpp - Functions for generating default value of demand of traffic
+                and link cost.
+generator.h - header file of generator.cpp
+main.cpp - Main program for simulation
+topology.dot - output file. shows the generated topology
+sim - executable file for simulation
+Makefile - Makefile for simulation
+
+Compiling instructions:
+Edit Makefile to point to the c++ compiler on the local machine.
+To compile, place all files within a single directory and type "make".
+To run, type "sim".
+
+Run:
+1. Run sim. The program will generate topology.dot
+2. To open topology.dot, we can use to following ways:
+   1. Tansfer to png file: 
+		$ dot -T png -O topology.dot
+   2. Rearrange topology to circle and transfer to png file: (Run 
+      script rearrange.sh)
+		$ ./rearrange.sh topology.dot
